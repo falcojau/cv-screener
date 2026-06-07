@@ -1,0 +1,223 @@
+:root {
+  --primary: #b0d5f0;
+  --primary-dark: #4a82a7;
+  --primary-light: #e0e7ff;
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
+  --success-border: #6ee7b7;
+  --error-bg: #fef2f2;
+  --error-text: #991b1b;
+  --error-border: #fca5a5;
+  --radius: 12px;
+  --shadow: 0 8px 40px rgba(99, 102, 241, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fdfdfd 0%, #a7c0d2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1e1b4b;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  background: #fafafa;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.file-area {
+  border: 2px dashed #d1d5db;
+  border-radius: var(--radius);
+  padding: 1.8rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fafafa;
+}
+
+.file-area:hover,
+.file-area.has-file {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.file-area input[type="file"] {
+  display: none;
+}
+
+.file-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.file-area span {
+  display: block;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.file-area span.filename {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.file-hint {
+  font-size: 0.78rem !important;
+  color: #9ca3af !important;
+  margin-top: 0.3rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: opacity 0.2s, transform 0.1s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(22, 107, 133, 0.4);
+}
+
+button[type="submit"]:hover {
+  opacity: 0.92;
+  box-shadow: 0 6px 20px rgba(22, 107, 133, 0.4);
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+button[type="submit"]:disabled {
+  background: linear-gradient(135deg, #011262 0%, #818cf8 100%);
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.message {
+  margin-top: 1.2rem;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.message.success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-border);
+}
+
+.message.error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--error-border);
+}
+
+.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

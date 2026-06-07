@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Screener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="icon-wrapper">📄</div>
+      <h1>Send us your CV</h1>
+      <p class="subtitle">Fill in the form and attach your resume</p>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name">First name</label>
+        <input type="text" id="name" placeholder="Jaume" required />
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last name</label>
+        <input type="text" id="last_name" placeholder="Falcó R" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="jaume@example.com" required />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" placeholder="+34 600 000 000" required />
+    </div>
+
+    <div class="form-group">
+      <label>CV (PDF, max 5MB)</label>
+      <div class="file-area" id="fileArea" onclick="document.getElementById('cv').click()">
+        <input type="file" id="cv" accept=".pdf" />
+        <div class="file-icon">⬆️</div>
+        <span id="fileLabel">Click to select your PDF</span>
+        <span class="file-hint">PDF only · max 5MB</span>
+      </div>
+    </div>
+
+    <button type="submit" id="submitBtn" onclick="submitForm()">
+      <span id="btnText">Send application</span>
+      <span id="btnSpinner" class="spinner hidden"></span>
+    </button>
+
+    <div class="message hidden" id="message"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
